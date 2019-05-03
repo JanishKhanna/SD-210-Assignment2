@@ -121,8 +121,9 @@ namespace SD_210_Assignment2.Migrations
             rooms.ForEach(p => context.Rooms.AddOrUpdate(room => room.Id, p));
             context.SaveChanges();
 
-            Customer myCustomer;
-            Room myRoom;
+            
+            
+
             var reservations = new List<Reservations>
             {
                 new Reservations
@@ -130,8 +131,9 @@ namespace SD_210_Assignment2.Migrations
                     ReservationCode = "PMJYW5WH2",
                     CheckIn = "April 8, 2019",
                     CheckOut = "April 12, 2019",
-                    TotalAmount = '$'+"250"
-
+                    TotalAmount = '$'+"250",
+                    Customer = customers.FirstOrDefault(p=> p.FirstName == "Alan"),
+                    Room = rooms.FirstOrDefault(p => p.RoomNumber == RoomNumber.OneA)
                 },
                 new Reservations
                 {
@@ -139,48 +141,54 @@ namespace SD_210_Assignment2.Migrations
                     CheckIn = "April 15, 2019",
                     CheckOut = "April 19, 2019",
                     TotalAmount = '$'+"250",
-
-
+                    Customer = customers.FirstOrDefault(p=> p.FirstName == "Harley"),
+                    Room = rooms.FirstOrDefault(p => p.RoomNumber == RoomNumber.OneB)
+                   
                 },
                 new Reservations
                 {
                     ReservationCode = "ICKU0JMMN",
                     CheckIn = "April 22, 2019",
                     CheckOut = "April 24, 2019",
-                    TotalAmount = '$'+"150"
-
+                    TotalAmount = '$'+"150",
+                    Customer = customers.FirstOrDefault(p=> p.FirstName == "Alan"),
+                    Room = rooms.FirstOrDefault(p => p.RoomNumber == RoomNumber.OneA)
                 },
                 new Reservations
                 {
                     ReservationCode = "EW4X1NWEU",
                     CheckIn = "May 1, 2019",
                     CheckOut = "May 10, 2019",
-                    TotalAmount = '$'+"1300"
-
+                    TotalAmount = '$'+"1300",
+                    Customer = customers.FirstOrDefault(p=> p.FirstName == "Kara"),
+                    Room = rooms.FirstOrDefault(p => p.RoomNumber == RoomNumber.ThreeA)
                 },
                 new Reservations
                 {
                     ReservationCode = "7XLLBVZYB",
                     CheckIn = "May 6, 2019",
                     CheckOut = "May 10, 2019",
-                    TotalAmount = '$'+"1000"
-
+                    TotalAmount = '$'+"1000",
+                    Customer = customers.FirstOrDefault(p=> p.FirstName == "Amber"),
+                    Room = rooms.FirstOrDefault(p => p.RoomNumber == RoomNumber.FourB)
                 },
                 new Reservations
                 {
                     ReservationCode = "WD4EFAINV",
                     CheckIn = "May 13, 2019",
                     CheckOut = "May 17, 2019",
-                    TotalAmount = '$'+"1000"
-
+                    TotalAmount = '$'+"1000",
+                    Customer = customers.FirstOrDefault(p=> p.FirstName == "Lara"),
+                    Room = rooms.FirstOrDefault(p => p.RoomNumber == RoomNumber.FourB)
                 },
                 new Reservations
                 {
                     ReservationCode = "Y4Y97Q4WG",
                     CheckIn = "May 13, 2019",
                     CheckOut = "May 15, 2019",
-                    TotalAmount = '$'+"150"
-
+                    TotalAmount = '$'+"150",
+                    Customer = customers.FirstOrDefault(p=> p.FirstName == "Alan"),
+                    Room = rooms.FirstOrDefault(p => p.RoomNumber == RoomNumber.OneA)
                 },
             };
 
@@ -193,4 +201,4 @@ namespace SD_210_Assignment2.Migrations
 
     }
 }
-}
+
