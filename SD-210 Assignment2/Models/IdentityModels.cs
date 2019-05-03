@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using SD_210_Assignment2.Models.Domain;
 
 namespace SD_210_Assignment2.Models
 {
@@ -24,6 +25,10 @@ namespace SD_210_Assignment2.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
+
+        public DbSet<Room> Rooms { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Reservations> Reservations { get; set; }
 
         public static ApplicationDbContext Create()
         {
